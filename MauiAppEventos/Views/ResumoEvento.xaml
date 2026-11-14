@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.ResumoEvento"
+             Title="Resumo do Evento">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="15"
+                             VerticalOptions="Center">
+
+            <Label Text="Evento Cadastrado!"
+                   FontFamily="FontdinerSwanky-Regular"
+                   FontSize="30"
+                   TextColor="{StaticResource Primary}"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20,0,20" />
+
+            <Border StrokeShape="RoundRectangle 10"
+                    BackgroundColor="{StaticResource SecondaryDarkText}"
+                    Padding="15">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Nome do evento:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding NomeEvento}" />
+
+                    <Label Text="Local do evento:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding LocalEvento}" />
+
+                    <Label Text="Data de início:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}" />
+
+                    <Label Text="Data de término:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyyy}'}" />
+
+                    <Label Text="Duração:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding DuracaoDias, StringFormat='{}{0} dias'}" />
+
+                    <Label Text="Número de participantes:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding NumeroParticipantes}" />
+
+                    <Label Text="Custo por participante:"
+                           FontAttributes="Bold" />
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='{}{0:C}'}" />
+
+                    <Label Text="Custo total:"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource Primary}" />
+                    <Label Text="{Binding CustoTotal, StringFormat='{}{0:C}'}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource Primary}" />
+
+                </VerticalStackLayout>
+            </Border>
+            
+            <Button Text="Calcular Novo Evento"
+                    HorizontalOptions="End"
+                    BackgroundColor="DarkSlateBlue"
+                    Clicked="Button_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.Views.CadastroEvento"
+             Title="Cadastro de Evento">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10"
+                             Spacing="10"
+                             VerticalOptions="Center">
+
+            <Label Text="Cadastro de Evento"
+                   FontSize="35"
+                   FontFamily="FontdinerSwanky-Regular"
+                   TextColor="{StaticResource Primary}"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,30,0,30" />
+
+            <Border StrokeShape="RoundRectangle 10"
+                    BackgroundColor="{StaticResource SecondaryDarkText}">
+
+                <VerticalStackLayout Padding="10"
+                                     Spacing="10">
+
+                    <Label Text="Nome do evento:" />
+                    <Entry x:Name="txt_nome_evento"
+                           Placeholder="Digite o nome do evento..." />
+                    
+                    <Border StrokeShape="RoundRectangle 10"
+                            BackgroundColor="{StaticResource PrimaryDark}"
+                            Padding="10">
+
+                        <Grid RowDefinitions="Auto, Auto"
+                              ColumnDefinitions="*, *"
+                              RowSpacing="10">
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="Data de início:" />
+
+                            <DatePicker x:Name="dtpck_inicio"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        DateSelected="dtpck_inicio_DateSelected" />
+
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   Text="Data de término:" />
+
+                            <DatePicker x:Name="dtpck_termino"
+                                        Grid.Row="1"
+                                        Grid.Column="1" />
+
+                        </Grid>
+                    </Border>
+
+                    <Label Text="Número de participantes:" />
+                    <Entry x:Name="txt_participantes"
+                           Placeholder="Quantidade de participantes"
+                           Keyboard="Numeric" />
+
+                    <Label Text="Local do evento:" />
+                    <Entry x:Name="txt_local_evento"
+                           Placeholder="Digite o local do evento..." />
+
+                    <Label Text="Custo por dia por participante (R$):" />
+                    <Entry x:Name="txt_custo"
+                           Placeholder="Ex.: 150,00"
+                           Keyboard="Numeric" />
+
+                    <Button Text="Cadastrar Evento"
+                            Clicked="btn_Cadastrar"
+                            BackgroundColor="DarkSlateBlue" />
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
